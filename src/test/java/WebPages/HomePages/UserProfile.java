@@ -39,35 +39,35 @@ public class UserProfile {
     public void checkThePostIsDisplayed(String articlesTitleData){
         this.articlesTitle=articlesTitleData;
         articleTitle=By.xpath("//h1[contains(text(),'"+articlesTitle+"')]");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(articleTitle));
-        articlesTitleElement=driver.get().findElement(articleTitle);
+        articlesTitleElement=wait.until(ExpectedConditions.visibilityOfElementLocated(articleTitle));
+        //articlesTitleElement=driver.get().findElement(articleTitle);
         Assert.assertTrue(articlesTitleElement.isDisplayed());
         getAddToFavoritesButtonByTitle=By.xpath("//h1[contains(text(),'"+articlesTitle+"')]/../..//div[@class='pull-xs-right']");
 
     }
 
     public void addPostToFavorites(){
-        wait.until(ExpectedConditions.elementToBeClickable(getAddToFavoritesButtonByTitle));
-        getAddToMyFavoritesButtonElement=driver.get().findElement(getAddToFavoritesButtonByTitle);
+        getAddToMyFavoritesButtonElement=wait.until(ExpectedConditions.elementToBeClickable(getAddToFavoritesButtonByTitle));
+        //getAddToMyFavoritesButtonElement=driver.get().findElement(getAddToFavoritesButtonByTitle);
         getAddToMyFavoritesButtonElement.click();
     }
 
     public void clickOnFavorites(){
-        wait.until(ExpectedConditions.elementToBeClickable(favoritedArticles));
-        favoritedArticlesElement=driver.get().findElement(favoritedArticles);
+        favoritedArticlesElement=wait.until(ExpectedConditions.elementToBeClickable(favoritedArticles));
+        //favoritedArticlesElement=driver.get().findElement(favoritedArticles);
         favoritedArticlesElement.click();
     }
 
     public void checkIfthePostIsAddedToFavorites(){
-        wait.until(ExpectedConditions.elementToBeClickable(favoritedArticles));
-        favoritedArticlesElement=driver.get().findElement(favoritedArticles);
+        favoritedArticlesElement=wait.until(ExpectedConditions.elementToBeClickable(favoritedArticles));
+        //favoritedArticlesElement=driver.get().findElement(favoritedArticles);
         favoritedArticlesElement.click();
         Assert.assertTrue(driver.get().findElement(getAddToFavoritesButtonByTitle).isDisplayed());
     }
 
     public void getToProfileSettings(){
-        wait.until(ExpectedConditions.elementToBeClickable(editProfileSettings));
-        editProfileSettingsElement=driver.get().findElement(editProfileSettings);
+        editProfileSettingsElement=wait.until(ExpectedConditions.elementToBeClickable(editProfileSettings));
+        //editProfileSettingsElement=driver.get().findElement(editProfileSettings);
         Assert.assertTrue(editProfileSettingsElement.isDisplayed());
         editProfileSettingsElement.click();
     }

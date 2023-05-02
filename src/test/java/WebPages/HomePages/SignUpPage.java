@@ -59,8 +59,8 @@ public class SignUpPage {
     }
 
     public void verifyTheSignInButtonIsEnabled(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(signUpButton));
-        signInButtonElement=driver.get().findElement(signUpButton);
+        signInButtonElement=wait.until(ExpectedConditions.visibilityOfElementLocated(signUpButton));
+        //signInButtonElement=driver.get().findElement(signUpButton);
         Assert.assertTrue(signInButtonElement.isEnabled());
     }
     public void clickOnTheSignUpButton(){
@@ -68,8 +68,8 @@ public class SignUpPage {
         signInButtonElement.click();
     }
     public void verifyIfTheerrorMessageisShowing(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage));
-        errorMessageElement=driver.get().findElement(errorMessage);
+        errorMessageElement=wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage));
+        //errorMessageElement=driver.get().findElement(errorMessage);
         Assert.assertTrue(errorMessageElement.isDisplayed());
     }
 }

@@ -30,14 +30,14 @@ public class Settings {
     }
 
     public void verifyTheVisibilityofSettingsPage(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(settingsBanner));
-        settingsBannerelement=driver.get().findElement(settingsBanner);
+        settingsBannerelement=wait.until(ExpectedConditions.visibilityOfElementLocated(settingsBanner));
+        //settingsBannerelement=driver.get().findElement(settingsBanner);
         Assert.assertEquals(settingsBannerelement.getText(),"Your Settings");
     }
 
     public void logout(){
-        wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
-        logoutButtonElement=driver.get().findElement(logoutButton);
+        logoutButtonElement=wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
+        //logoutButtonElement=driver.get().findElement(logoutButton);
         Actions action=new Actions(driver.get());
         action.click(logoutButtonElement);
 

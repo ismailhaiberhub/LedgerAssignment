@@ -22,8 +22,8 @@ public class EditPosts {
     }
 
     public void deletingApost(){
-        wait.until(ExpectedConditions.elementToBeClickable(deletePostbutton));
-        deletePostElement=driver.get().findElement(deletePostbutton);
+        deletePostElement=wait.until(ExpectedConditions.elementToBeClickable(deletePostbutton));
+        //deletePostElement=driver.get().findElement(deletePostbutton);
         deletePostElement.click();
     }
 

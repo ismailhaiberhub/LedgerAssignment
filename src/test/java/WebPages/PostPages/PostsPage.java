@@ -60,8 +60,8 @@ public class PostsPage {
     }
 
     public void publishTheArticles(){
-        wait.until(ExpectedConditions.elementToBeClickable(publishArticleButton));
-        publishArticleButtonElement=driver.get().findElement(publishArticleButton);
+        publishArticleButtonElement=wait.until(ExpectedConditions.elementToBeClickable(publishArticleButton));
+        //publishArticleButtonElement=driver.get().findElement(publishArticleButton);
         publishArticleButtonElement.click();
     }
 

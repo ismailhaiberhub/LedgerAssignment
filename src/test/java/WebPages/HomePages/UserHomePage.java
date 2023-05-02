@@ -28,25 +28,25 @@ public class UserHomePage {
 
 
     public void verifyTheUserIsLoggedIn(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(userFacePic));
-        userFacepicElement=driver.get().findElement(userFacePic);
+        userFacepicElement=wait.until(ExpectedConditions.visibilityOfElementLocated(userFacePic));
+        //userFacepicElement=driver.get().findElement(userFacePic);
         Assert.assertTrue(userFacepicElement.isDisplayed());
     }
     public void getTotTheUserProfil(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(userFacePic));
-        userFacepicElement=driver.get().findElement(userFacePic);
+        userFacepicElement=wait.until(ExpectedConditions.visibilityOfElementLocated(userFacePic));
+        //userFacepicElement=driver.get().findElement(userFacePic);
         userFacepicElement.click();
     }
 
     public void clickOnNewPostButton(){
-        wait.until(ExpectedConditions.elementToBeClickable(newPostButton));
-        newPostButtonElement=driver.get().findElement(newPostButton);
+        newPostButtonElement=wait.until(ExpectedConditions.elementToBeClickable(newPostButton));
+        //newPostButtonElement=driver.get().findElement(newPostButton);
         newPostButtonElement.click();
     }
 
     public void theUserIsOntheHomePage(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(yourFeed));
-        yourFeedElement=driver.get().findElement(yourFeed);
+        yourFeedElement=wait.until(ExpectedConditions.visibilityOfElementLocated(yourFeed));
+        //yourFeedElement=driver.get().findElement(yourFeed);
         Assert.assertTrue(yourFeedElement.isDisplayed());
     }
 }
